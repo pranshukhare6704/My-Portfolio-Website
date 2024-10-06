@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.2c3d2c4c.css",
+    "main.js": "/portfolio/static/js/main.a7554f15.js",
+    "static/js/453.1407b060.chunk.js": "/portfolio/static/js/453.1407b060.chunk.js",
+    "static/media/WhatsApp Image 2024-07-10 at 12.05.35 PM (1).jpeg": "/portfolio/static/media/WhatsApp Image 2024-07-10 at 12.05.35 PM (1).68b46f83eab6781a6284.jpeg",
+    "static/media/checklist-1295319_1280.png": "/portfolio/static/media/checklist-1295319_1280.5c3692eda6a784d5f9b6.png",
+    "static/media/ControlPanel.jpg": "/portfolio/static/media/ControlPanel.52cecd9f87bad911b5e0.jpg",
+    "static/media/game-7217379_1280.png": "/portfolio/static/media/game-7217379_1280.8e4b465d104417dc68b6.png",
+    "index.html": "/portfolio/index.html",
+    "main.2c3d2c4c.css.map": "/portfolio/static/css/main.2c3d2c4c.css.map",
+    "main.a7554f15.js.map": "/portfolio/static/js/main.a7554f15.js.map",
+    "453.1407b060.chunk.js.map": "/portfolio/static/js/453.1407b060.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2c3d2c4c.css",
+    "static/js/main.a7554f15.js"
+  ]
+}
