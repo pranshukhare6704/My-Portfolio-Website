@@ -1,0 +1,326 @@
+html
+
+<div>
+    <div className='techskill'>Technical Skill</div>
+    <div>
+        <h4>HTML</h4>
+        <div className='skillbar' data-percentage="90%"></div>
+    </div>
+    <div>
+        <h4>CSS</h4>
+        <div className='skillbar' data-percentage="90%"></div>
+    </div>
+    <div>
+        <h4>JavaScript</h4>
+        <div className='skillbar' data-percentage="90%"></div>
+    </div>
+    <div>
+        <h4>React.Js</h4>
+        <div className='skillbar' data-percentage="90%"></div>
+    </div>
+    <div>
+        <h4>Next.Js</h4>
+        <div className='skillbar' data-percentage="90%"></div>
+    </div>
+    <div>
+        <h4>Git</h4>
+        <div className='skillbar' data-percentage="90%"></div>
+    </div>
+</div>
+
+css
+
+.skills{
+display: grid;
+grid-template-columns: auto auto;
+justify-content: space-around;
+padding: 50px 0px;
+}
+
+.skillbar{
+position: relative;
+width: 100%;
+height: 20px;
+background-color: #cfd8dc;
+border-radius: 10px;
+overflow: hidden;
+}
+
+.skillbar::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+height: 100%;
+width: 0;
+background-color: #004d40; /* Dark Teal */
+border-radius: 10px;
+transition: width 1s;
+}
+
+.skillbar[data-percentage="90%"] .skill-bar::before { width: 90%; }
+
+/*--------------------------css------------------*/
+
+.skillbar::after {
+content: attr(data-percentage); /* Display the percentage */
+position: absolute;
+top: -25px; /* Position above the bar */
+left: 0;
+transform: translateX(-50%);
+background-color: #fff; /* Background color for better visibility */
+padding: 2px 5px;
+border-radius: 3px;
+font-size: 12px;
+color: #004d40; /* Same as bar color */
+transition: left 1s; /* Animate the position change */
+}
+
+HTML for tech skill
+
+<div className='techskill'>Technical Skill</div>
+<div>
+    <h4>HTML</h4>
+    <div className='skillbar' data-percentage="90%"></div>
+</div>
+<div>
+    <h4>CSS</h4>
+    <div className='skillbar' data-percentage="90%"></div>
+</div>
+<div>
+    <h4>JavaScript</h4>
+    <div className='skillbar' data-percentage="90%"></div>
+</div>
+<div>
+    <h4>React.Js</h4>
+    <div className='skillbar' data-percentage="90%"></div>
+</div>
+<div>
+    <h4>Next.Js</h4>
+    <div className='skillbar' data-percentage="90%"></div>
+</div>
+<div>
+    <h4>Git</h4>
+    <div className='skillbar' data-percentage="90%"></div>
+</div>
+
+html for professional skills
+
+<div className='techskill'>Professional Skill</div>
+<div>
+    <h4>Troubleshooting</h4>
+    <div className='skill-circle' data-percentage="90%"></div>
+</div>
+<div>
+    <h4>Communication</h4>
+    <div className='skill-circle' data-percentage="90%"></div>
+</div>
+<div>
+    <h4>Teamwork</h4>
+    <div className='skill-circle' data-percentage="90%"></div>
+</div>
+<div>
+    <h4>Debugging</h4>
+    <div className='skill-circle' data-percentage="90%"></div>
+</div>
+
+required css for circular ring 
+
+.professional-skills {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-around;
+    padding: 50px 0px;
+}
+
+.skill-circle {
+    position: relative;
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+    border-radius: 50%;
+    background-color: #cfd8dc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #333;
+}
+
+.skill-circle__fill {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #004d40;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    transform: rotate(-90deg);
+    transition: transform 1s;
+}
+
+.profskill-percentage {
+    z-index: 1;
+    font-weight: bold;
+}
+
+.skill-circle[data-percentage="90%"] .skill-circle__fill {
+    transform: rotate(calc(360 * 0.9)deg);
+}
+   
+required recent css;
+
+.skill-circle {
+    position: relative;
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+    border-radius: 50%;
+    /* Remove background color */
+    /* display: flex;  --> No longer needed for alignment */
+    /* align-items: center; --> No longer needed for alignment */
+    /* justify-content: center; --> No longer needed for alignment */
+    font-size: 16px;
+    color: #333;
+    overflow: hidden; /* Ensure content does not overflow */
+    /* Add a border with desired thickness and color for the annulus ring */
+    border: 5px solid #004d40; /* Adjust thickness and color as needed */
+    --profskill-width: var(--percentage, 0);
+}
+
+
+.profskill-circle__fill {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    /* Remove background color, not needed anymore */
+    width: var(--profskill-width);
+    transform: rotate(-90deg); /* Maintain rotation for animation */
+    transition: transform 1s; /* Maintain transition for animation */
+}
+
+.skill-percentage {
+    z-index: 1;
+    font-weight: bold;
+}
+
+.skill-circle[data-percentage="0%"] .skill-circle__fill {
+    display: none; /* Hide fill if percentage is 0% */
+}
+
+.skill-circle__outer {
+    /* Remove this class as it's not needed for the annulus effect */
+    /* You can add it back if you want a separate outer circle */
+}
+
+/*-------------------useState for professional skills---------------------------*/
+
+const [profskillWidths, setprofSkillWidths] = useState({
+    Troubleshooting: 0,
+    Communication: 0,
+    Teamwork: 0,
+    Debugging: 0,
+});
+
+useEffect(() => {
+    setTimeout(() => {
+        setprofSkillWidths({
+            Troubleshooting: 90,
+            Communication: 85,
+            Teamwork: 80,
+            Debugging: 75,
+        });
+    }, 100); // Delay to trigger the transition
+}, []);
+
+/*---------------------------Professional skills CSS----------------------------*/
+
+/*-------professional-skill-------------*/
+
+    
+.skill-circle {
+    position: relative;
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+    border-radius: 50%;
+    /* Remove background color */
+    /* display: flex;  --> No longer needed for alignment */
+    /* align-items: center; --> No longer needed for alignment */
+    /* justify-content: center; --> No longer needed for alignment */
+    font-size: 16px;
+    color: #333;
+    overflow: hidden; /* Ensure content does not overflow */
+    /* Add a border with desired thickness and color for the annulus ring */
+    border: 5px solid #004d40; /* Adjust thickness and color as needed */
+    --profskill-width: var(--percentage, 0);
+}
+
+
+.profskill-circle__fill {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    /* Remove background color, not needed anymore */
+    width: var(--profskill-width);
+    transform: rotate(-90deg); /* Maintain rotation for animation */
+    transition: transform 1s; /* Maintain transition for animation */
+}
+
+.skill-percentage {
+    z-index: 1;
+    font-weight: bold;
+}
+
+.skill-circle[data-percentage="0%"] .skill-circle__fill {
+    display: none; /* Hide fill if percentage is 0% */
+}
+
+.skill-circle__outer {
+    /* Remove this class as it's not needed for the annulus effect */
+    /* You can add it back if you want a separate outer circle */
+}
+
+/*--------------contact.css----------------------*/
+.nameinput .emailinput .messageinput {
+    margin-left: 10px;
+}
+
+
+/*---------------Contact portion(right side-backend work)-------------------------- */
+
+<div className='right-contact'>
+                    <input type="text" placeholder="Enter Your Name..." className="nameinput"></input>
+                    <input type="text" placeholder="Enter Your E-mail..." className="emailinput"></input>
+                    <input type="text" placeholder="Enter Your Message..." className="yourMessage"></input>
+                    <button className="button">Submit</button>
+                </div>
+
+                ----------------------------left side(icons)-----------------------
+                <p>Icon</p>
+                <p>Icon</p>
+-----------------------introbody-project-section(CSS)---------------------------
+
+.twogameImages {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-around;
+}
+
+.gameimage1 {
+    height: 500px;
+}
+
+.gameimage2 {
+    height: 500px;
+}
+______-------------------------------------------skill component part-----------------------
+<div key={skill}>
+                                <h4>{skill}</h4>
+                                <div className='skillbar' data-percentage={`${width}%`} style={{ '--width': `${width}%` }}>
+                                    <div className="skillbar__fill"></div>
+                                    {/* Display percentage number above the fill */}
+                                    <span className='skill-percentage'>{`${width}%`}</span>
+                                </div>
+                            </div>
+
+                            ------------introbody (service section)-----------------------
+                           

@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jacquard+24&display=swap');
+
+.root {
+    background-color: aliceblue;
+    padding: 2px;
+}
+
+.nameworkContact {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.portfolio {
+    font-family: "Jacquard 24", system-ui;
+    font-weight: 600;
+    font-size: 40px;
+}
+
+.workContact {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    font-size: 23px;
+}

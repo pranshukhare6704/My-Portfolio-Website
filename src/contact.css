@@ -1,0 +1,50 @@
+.root-contact {
+    background-color: #e6f0ff;
+    padding: 2px;
+}
+
+.contact {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.icon-email {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.icon-number {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.nameinput {
+    border: 2px solid black;
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 1%;
+}
+
+.emailinput {
+    border: 2px solid black;
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 1%;
+}
+
+.yourMessage {
+    border: 2px solid black;
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 1%;
+    height: 168px;
+}
+
+.button {
+    border-radius: 13px;
+    width: 103%;
+    font-size: 18px;
+}
